@@ -24,10 +24,9 @@ public class SecurityConfiguration {
                 .antMatchers(HttpMethod.POST, "/request/**").authenticated()
                 .antMatchers(HttpMethod.PUT, "/request/**").authenticated()
 
-                .antMatchers(HttpMethod.POST, "/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/**").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/**").authenticated()
+                .antMatchers(HttpMethod.PUT, "/**").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/**").authenticated()
 
                 // WEB
                 .antMatchers(HttpMethod.POST, "/task").authenticated()
